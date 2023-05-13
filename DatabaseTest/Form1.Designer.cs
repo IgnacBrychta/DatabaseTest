@@ -91,12 +91,13 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(richTextBox_queryResult);
-            groupBox2.Location = new Point(18, 142);
+            groupBox2.Location = new Point(29, 199);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(1189, 850);
             groupBox2.TabIndex = 5;
             groupBox2.TabStop = false;
             groupBox2.Text = "Textový výsledek";
+            groupBox2.Visible = false;
             // 
             // dataGridView_scriptResult
             // 
@@ -107,15 +108,15 @@
             dataGridView_scriptResult.ReadOnly = true;
             dataGridView_scriptResult.RowHeadersWidth = 82;
             dataGridView_scriptResult.RowTemplate.Height = 41;
-            dataGridView_scriptResult.Size = new Size(875, 784);
+            dataGridView_scriptResult.Size = new Size(2103, 784);
             dataGridView_scriptResult.TabIndex = 5;
             // 
             // groupBox3
             // 
             groupBox3.Controls.Add(dataGridView_scriptResult);
-            groupBox3.Location = new Point(1231, 158);
+            groupBox3.Location = new Point(12, 110);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(896, 828);
+            groupBox3.Size = new Size(2115, 828);
             groupBox3.TabIndex = 6;
             groupBox3.TabStop = false;
             groupBox3.Text = "Tabulkový výsledek";

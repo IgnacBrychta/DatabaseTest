@@ -6,7 +6,9 @@ namespace DatabaseTest
 {
     public partial class Form1 : Form
     {
-        SqlConnection sqlConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Ignác\\source\\repos\\DatabaseTest\\DatabaseTest\\Database1.mdf;Integrated Security=True");
+        SqlConnection sqlConnection = new SqlConnection(
+            $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Directory.GetParent(Directory.GetCurrentDirectory())!.Parent!.Parent}\\Database1.mdf;Integrated Security=True"
+            );
         public Form1()
         {
             InitializeComponent();
@@ -51,8 +53,8 @@ namespace DatabaseTest
         }
         private void FillScriptsComboBox()
         {
-            string folder = @"../../../database/queries";
-            var scripts = Directory.EnumerateFiles(folder).ToArray();
+            string folder = @"..\..\..\database\queries";
+            var scripts = Directory.EnumerateFiles(folder);
             foreach (var script in scripts)
             {
                 comboBox_scripts.Items.Add(script);
@@ -89,7 +91,7 @@ namespace DatabaseTest
                             );
                     }
                 }
-                richTextBox_queryResult.Text += string.Join(" ", item) + 
+                richTextBox_queryResult.Text += string.Join(" ", item) +
                     Environment.NewLine + new string('=', 40) + Environment.NewLine;
                 itemCount++;
             }
